@@ -136,11 +136,11 @@ namespace Microsoft.AspNetCore.Blazor.E2ETest.Tests
 
             WaitAssert.Equal(string.Empty, () => output.Text);
 
-            input.SendKeys("abc");
-            WaitAssert.Equal("abc", () => output.Text);
+            input.SendKeys("abcdefghijklmnopqrstuvwxyz");
+            WaitAssert.Equal("abcdefghijklmnopqrstuvwxyz", () => output.Text);
 
             input.SendKeys(Keys.Backspace);
-            WaitAssert.Equal("ab", () => output.Text);
+            WaitAssert.Equal("abcdefghijklmnopqrstuvwxy", () => output.Text);
         }
     }
 }
